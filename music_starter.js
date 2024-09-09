@@ -82,13 +82,13 @@ image(palmtree, -275, 100, imageSize, imageSize);
 pop();
 
 
-  textFont('Georgia');
+  textFont('Courier New');
   textAlign(CENTER);
   textStyle(BOLD);
   textSize(50);
   noStroke();
   fill(0, 0, 0, int(last_words_opacity));
-  text(words, width / 2, height / 2);
+  text(words, width / 2, height / 1.85);
 
 
 
