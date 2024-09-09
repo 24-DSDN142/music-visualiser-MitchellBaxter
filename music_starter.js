@@ -46,22 +46,41 @@ palmtree = loadImage("Palmtree.png")
       last_words_opacity = 255;
     }
   }
-  //Water
-  fill(66, 135, 245);
-  rect(0, height -400, width, 150);
   last_words = words;
 
-  image(palmtree,625,200,500,500)
+  
+//Water
+ fill(66, 135, 245);
+rect(0, height -400, width, 150);
 
+
+//Hill
+beginShape();
+fill(38, 148, 50)
+vertex(0, 470);
+bezierVertex(272, 583, 500, 300, 755, 496);
+bezierVertex(783, 519, 804, 527, 826, 529);
+bezierVertex(849, 529, 881, 529, 898, 529);
+bezierVertex(904, 555, 916, 608, 914, 679);
+bezierVertex(911, 710, 843, 713, 724, 709);
+bezierVertex(615, 706, 427, 713, 272, 708);
+bezierVertex(72, 707, 4, 706, 0, 701);
+bezierVertex(0, 651, 0, 567, 0, 470);
+endShape();
+
+
+
+
+image(palmtree,625,200,500,500)
 push(); 
-scale(-1, 1); // Flip horizontally
-image(palmtree, -275, 200, 500, 500); // Draw the image (flipped)
-pop(); // Restore the previous drawing style
+scale(-1, 1); 
+image(palmtree, -275, 200, 500, 500); 
+pop(); 
 
   textFont('Georgia');
   textAlign(CENTER);
   textStyle(BOLD);
-  textSize(60);
+  textSize(50);
   noStroke();
   fill(0, 0, 0, int(last_words_opacity));
   text(words, width / 2, height / 2);
