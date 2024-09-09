@@ -1,8 +1,11 @@
 let last_words = "";
 let last_words_opacity = 0;
 
-
+let palmtree;
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
+  if (counter==0){
+palmtree = loadImage("Palmtree.png")
+  }
   background(255, 236, 180); // cream
   fill(235, 205, 52); // purple
 
@@ -26,7 +29,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   for (let i = 0; i < 10; i++) {
     let glowSize = ovalSize + i * 10; // Increase the size for each glow layer
     let glowAlpha = 255 - i * 25; // Decrease the opacity for each glow layer
-    fill(235, 205, 52, glowAlpha); // Yellow with varying opacity
+    fill(235, 140, 52, glowAlpha); // Yellow with varying opacity
     ellipse(width / 2, ovalPlace, glowSize);
   }
   
@@ -48,15 +51,26 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   rect(0, height -400, width, 150);
   last_words = words;
 
+  image(palmtree,625,200,500,500)
+
+push(); 
+scale(-1, 1); // Flip horizontally
+image(palmtree, -275, 200, 500, 500); // Draw the image (flipped)
+pop(); // Restore the previous drawing style
+
   textFont('Georgia');
   textAlign(CENTER);
   textStyle(BOLD);
-  textSize(80);
+  textSize(60);
   noStroke();
   fill(0, 0, 0, int(last_words_opacity));
   text(words, width / 2, height / 2);
 
- 
+
+
+
+
+
 
 }
 
