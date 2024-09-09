@@ -68,14 +68,16 @@ bezierVertex(72, 707, 4, 706, 0, 701);
 bezierVertex(0, 651, 0, 567, 0, 470);
 endShape();
 
+// Adjust image size based on drum value
+let imageSize = map(drum, 0, 40, 400, 800); // Adjust the range as needed
+let imageX = 625; // Initial X position
+let imageY = 200; // Initial Y position
 
-
-
-image(palmtree,625,200,500,500)
-push(); 
-scale(-1, 1); 
-image(palmtree, -275, 200, 500, 500); 
-pop(); 
+image(palmtree, imageX, imageY, imageSize, imageSize);
+push();
+scale(-1, 1);
+image(palmtree, -275, 200, imageSize, imageSize);
+pop();
 
   textFont('Georgia');
   textAlign(CENTER);
