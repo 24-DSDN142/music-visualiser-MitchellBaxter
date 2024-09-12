@@ -1,7 +1,5 @@
 let last_words = "";
 let last_words_opacity = 0;
-
-
 let palmtree;
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   if (counter==0){
@@ -29,9 +27,9 @@ Grass = loadImage("Grass.png")
   
   // Outer glow effect
   for (let i = 0; i < 10; i++) {
-    let glowSize = ovalSize + i * 10; // Increase the size for each glow layer
-    let glowAlpha = 255 - i * 25; // Decrease the opacity for each glow layer
-    fill(235, 120, 52, glowAlpha); // Yellow with varying opacity
+    let glowSize = ovalSize + i * 10; 
+    let glowAlpha = 255 - i * 25; 
+    fill(235, 120, 52, glowAlpha); 
     ellipse(width / 2, ovalPlace, glowSize);
   }
   
@@ -51,9 +49,9 @@ Grass = loadImage("Grass.png")
   last_words = words;
 
   
-//Water with bass effect
+//Water and bass effect
 fill(66, 100, 230);
-let waveHeight = map(bass, -100, 150, 10, 40); // Adjust the range and intensity as needed
+let waveHeight = map(bass, -100, 150, 10, 40); 
 for (let i = 0; i < width; i += 10) {
   let waveOffset = map(sin(frameCount * 1.2 + i * 0.1), -1, 1, -waveHeight, waveHeight); 
   rect(i, height - 400 + waveOffset, 10, 300 - waveOffset);
@@ -137,12 +135,10 @@ bezierVertex(246, 59, 231, 12, 275, 39);
 endShape();
 
 
-// Adjust image size based on drum value
-let imageSize = map(drum, -150, 40, 100, 800); // Adjust the range as needed
-let imageX = 625; // Initial X position
-let imageY = 100; // Initial Y position
-
-
+// Palm tree iamge and bass value
+let imageSize = map(drum, -150, 40, 100, 800); 
+let imageX = 625; 
+let imageY = 100; 
 image(palmtree, imageX, imageY, imageSize, imageSize);
 push();
 scale(-1, 1);
@@ -161,10 +157,8 @@ pop();
 
 
 
-
+  //grass image and bass value
   let grassHeight = map(bass, -200, 50, 40, 180);
-
-  // Draw the grass images with the calculated height
   image(Grass, -50, 700 - grassHeight, 1000, grassHeight);
 
 
